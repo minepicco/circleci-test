@@ -13,3 +13,7 @@ jobs:
           name: docker ps
           command: docker ps -a
 
+      - run:
+          name: build
+          command: docker build . --tag minepicco/test:1.0
+
