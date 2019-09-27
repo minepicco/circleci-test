@@ -6,8 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: GET Dockerfile 
+          command: wget https://raw.githubusercontent.com/minepicco/speechtotext-dockerfile/master/Dockerfile -O Dockerfile
       - run:
-          name: Print the Current Time
-          command: date
+          name: Build
+          command: docker build . --file Dockerfile --tag minepicco/speechtotext:latest
+
