@@ -25,7 +25,3 @@ jobs:
           name: docker push
           command: docker push minepicco/test:1.0
           
-      - store_test_results:
-          path: target/surefire-reports
-      - store_artifacts:
-          path: target/image
