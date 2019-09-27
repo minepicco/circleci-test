@@ -9,6 +9,6 @@ jobs:
           command: wget https://raw.githubusercontent.com/minepicco/speechtotext-dockerfile/master/Dockerfile -O Dockerfile
       - run:
           name: build
-          command: docker build . --file Dockerfile --tag minepicco/speechtotext:latest
+          command: docker build . --file Dockerfile --tag minepicco/speechtotext:1.0
 
 
