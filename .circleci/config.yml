@@ -20,7 +20,7 @@ jobs:
           name: docker login
           command: docker login --username $username --password $password "https://index.docker.io/v1/"
           
-      - run:
-          name: docker push
-          command: docker push minepicco/test:1.0
-
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/image
