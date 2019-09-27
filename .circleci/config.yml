@@ -17,6 +17,8 @@ jobs:
           name: build
           command: docker build -t minepicco/test:1.0 .
   test:
+    docker:
+      - image: circleci/build-image
     steps:
       - run:
           name: docker login
