@@ -17,6 +17,14 @@ jobs:
           name: build
           command: docker build -t minepicco/test:1.0 .
           
+      - run:
+          name: docker login
+          command: docker login -u $username -p $password -e $mailaddress
+     
+     - run:
+          name: docker push
+          command: docker push minepicco/test:1.0
+          
       - store_test_results:
           path: target/surefire-reports
       - store_artifacts:
