@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: circleci/build-image
     steps:
-      - checkout
       - run:
           name: GET Dockerfile 
           command: wget https://raw.githubusercontent.com/minepicco/speechtotext-dockerfile/master/Dockerfile -O Dockerfile
