@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: prepare 
+          command: apt-get install git
+      - run:
           name: GET Dockerfile 
           command: wget https://raw.githubusercontent.com/minepicco/speechtotext-dockerfile/master/Dockerfile -O Dockerfile
       - run:
