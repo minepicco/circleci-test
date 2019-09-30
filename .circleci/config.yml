@@ -30,7 +30,7 @@ jobs:
       #    command: if [ $out !=0 ]; then echo "vulnerability or compliance violation detected" && exit 1; else echo $image" is ready to publish in Dockerhub"; fi;
       - run:
           name: docker login
-          command: docker login -u $username -p $password -e $mailaddress     
+          command: docker login -u $username -p $password #-e $mailaddress     
       - run:
           name: docker push
           command: docker push $image
