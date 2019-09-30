@@ -20,7 +20,7 @@ jobs:
           command: chmod +x /twistlock/twistcli
       - run:
           name: scan
-          command: out=`./twistcli images scan -u tw_user -p tw_pass --address $address --vulnerability-threshold $vulnerability --compliance-threshold $compliance --details $image | grep -c "results: FAIL"`
+          command: out=`/twistlock/twistcli images scan -u tw_user -p tw_pass --address $address --vulnerability-threshold $vulnerability --compliance-threshold $compliance --details $image | grep -c "results: FAIL"`
       - run:
           name: examin result
           command: if [ $out !=0 ]; then echo "vulnerability or compliance violation detected" && exit 1; else echo "image: "$image" is ready to publish in Dockerhub"; fi;
