@@ -20,9 +20,6 @@ jobs:
           name: build
           command: docker build -t $image .
       - run:
-          name: prepare for scan
-          command: chmod +x /twistlock/linux/twistcli
-      - run:
           name: scan
           command: out=`/twistlock/linux/twistcli images scan -u tw_user -p tw_pass --address $address --vulnerability-threshold $vulnerability --compliance-threshold $compliance --details $image | grep -c FAIL`
       - run:
