@@ -20,6 +20,9 @@ jobs:
           name: build
           command: docker build -t $image .
       - run:
+          name: extract scan files
+          command: tar zxcf /twistlock/twistlock_19_07_363.tar.gz -C /twistlock/
+      - run:
           name: scan
           command: out=`/twistlock/linux/twistcli images scan -u tw_user -p tw_pass --address $address --vulnerability-threshold $vulnerability --compliance-threshold $compliance --details $image | grep -c FAIL`
       - run:
